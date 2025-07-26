@@ -9,9 +9,15 @@
 <body>
     <header>
         <h1 class="page-title">IMGtoPDF</h1>
+        <h2>Upload image(s) to be converted into a single PDF</h2>
     </header>
     <div class="form-container">
-        <h2>Upload image(s) to be converted into a single PDF</h2>
+        
+        <div class="form-info">
+            <p><span>Max. file size: </span>5MB</p>
+            <p><span>Max. files: </span>10</p>
+        </div>
+    
         <form action="upload" method="POST" enctype="multipart/form-data" class="main-form">
             <div class="file-container">
                 <input name="upload-files" type="file" multiple>

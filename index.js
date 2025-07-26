@@ -5,7 +5,20 @@ import { fileURLToPath } from 'url';
 import { PageSizes, PDFDocument } from 'pdf-lib';
 
 const app = express();
-const upload = multer({ storage: multer.memoryStorage() })
+const upload = multer({ 
+    storage: multer.memoryStorage(),
+    limits: {
+        fileSize: 5 * 1024 * 1024,
+        files: 10,
+    },
+    fileFilter: (req, file, cb) => {
+        if (!file.mimetype.match(/^image\/(jpeg|png)$/)) {
+            return cb(new Error("Only JPG/PNG files allowed"))
+        }
+        cb(null, true);
+    }
+    
+ })
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 app.use(express.static(path.join(__dirname, 'public')));

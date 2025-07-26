@@ -1,7 +1,6 @@
 # IMGtoPDF
 
-Convert one or more images into a single PDF—no third‑party apps required.
-
+Convert one or more images into a single PDF.
 ---
 
 ## Problems to Solve

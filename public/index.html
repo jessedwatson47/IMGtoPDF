@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1 class="page-title">IMGtoPDF</h1>
+    </header>
+    <div class="form-container">
+        <h2>Upload image(s) to be converted into a single PDF</h2>
+        <form action="upload" method="POST" enctype="multipart/form-data" class="main-form">
+            <div class="file-container">
+                <input name="upload-files" type="file" multiple>
+            </div>
+            <button type="submit" class="btn">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

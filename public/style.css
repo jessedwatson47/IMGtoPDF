@@ -1,0 +1,109 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    list-style: none;
+    box-sizing: border-box;
+    letter-spacing: 0.02em;
+    word-spacing: 0.05em;
+}
+
+:root {
+    --bg-color: rgb(255, 250, 250);
+    --bg-color-t50: rgba(255, 250, 250, 0.50);
+    --text-color: rgb(53, 47, 54);
+    --text-color-t50: rgba(53, 47, 54, 0.50);
+    --lavender: rgb(250, 241, 248);
+    --accent: rgb(112, 0, 240);
+    --accent-hover: rgba(112, 0, 240, 0.50);
+    --btn-height: 2.5rem;
+}
+
+.page-title {
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: capitalize all;
+}
+
+body {
+    padding: 3rem 1.5rem;
+    background: var(--btn-color);
+    color: #2e2e2e;
+    text-align: center;
+}
+
+.main-form {
+    display: flex;
+    justify-content: center;
+    max-width: 40rem;
+}
+
+.btn {
+    height: var(--btn-height);
+    width: 100px;
+    background-color: var(--accent);
+    color: var(--bg-color);
+    border: 1px solid var(--btn-text-color);
+    border-radius: 0 25px 25px 0;
+    font-weight: bold;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 25px;
+    gap: 25px;
+}
+
+.file-container {
+    display: flex;
+    width: 40vw;
+    outline: 1px solid #2e2e2e;
+    outline-offset: -1px;
+    border-radius: 25px 0px 0px 25px;
+}
+
+.main-form h2 {
+    font-weight: lighter;
+}
+
+
+input[type="file"]::file-selector-button {
+    margin-inline-end: 1em;
+    height: 100%;
+    width: 100px;
+    background-color:var(--btn-color);
+    color: var(--btn-text-color);
+    border: none;
+    border-right: 1px solid var(--text-color);
+    font: inherit;
+    cursor: pointer;
+}
+
+.form-container h2 {
+    font-size: 1.25rem;
+    font-weight: lighter;
+}
+
+@media (max-width: 620px) {
+    .main-form {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+    }
+    input[type="file"]::file-selector-button {
+        height: 3rem;
+        border-radius: 0px;
+    }
+    .file-container {
+        border-radius: 0px;
+        width: 20rem;
+    }
+
+    .btn {
+        border-radius: 0px;
+    }
+}

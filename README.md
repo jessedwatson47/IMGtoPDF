@@ -47,5 +47,5 @@ Convert one or more images into a single PDF.
 - Better error handling (for client)
 - Experiment with server storage (diskStorage)
 - Validation for file size, type and number of files
--  Drag'n'Drop files for upload
+- Drag'n'Drop files for upload
 

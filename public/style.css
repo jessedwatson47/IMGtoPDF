@@ -10,42 +10,66 @@
 
 :root {
     --bg-color: rgb(255, 250, 250);
-    --bg-color-t50: rgba(255, 250, 250, 0.50);
     --text-color: rgb(53, 47, 54);
-    --text-color-t50: rgba(53, 47, 54, 0.50);
-    --lavender: rgb(250, 241, 248);
-    --accent: rgb(112, 0, 240);
-    --accent-hover: rgba(112, 0, 240, 0.50);
     --btn-height: 2.5rem;
 }
 
 .page-title {
-    font-size: 2rem;
+    font-size: 4rem;
     font-weight: bold;
-    text-transform: capitalize all;
+    color: #0a6bff;
+
+}
+
+.icon-title {
+    color: black;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 2rem 0 2rem;
+    font-size: 1.5rem;
 }
 
 body {
     padding: 3rem 1.5rem;
-    background: var(--btn-color);
+    background-image: linear-gradient(90deg, #a1c4fd 0%, #c2e9fb 100%);
     color: #2e2e2e;
     text-align: center;
-}
-
-.main-form {
     display: flex;
     justify-content: center;
-    max-width: 40rem;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
 }
 
 .btn {
     height: var(--btn-height);
-    width: 100px;
-    background-color: var(--accent);
+    width: 10rem;
+    background-color: #0a6bff;
     color: var(--bg-color);
     border: 1px solid var(--btn-text-color);
-    border-radius: 0 25px 25px 0;
-    font-weight: bold;
+    font-weight: 500;
+    font-size: 1rem;
+    display: inline-flex;
+    justify-content: center;
+    gap: 1rem;
+    cursor: pointer;
+    align-items: center;
+    border-radius: 0.25rem;
+    box-shadow: rgba(1,60,136,.5) 0 -1px 3px 0 inset,rgba(0,44,97,.1) 0 3px 6px 0;
+}
+
+
+
+.btn:hover {
+  background-color: #065dd8;
+}
+
+@media (min-width: 768px) {
+  .button-66 {
+    padding: 16px 44px;
+    min-width: 150px;
+  }
 }
 
 .form-container {
@@ -59,6 +83,8 @@ body {
     display: flex;
     gap: 1rem;
     font-size: 0.8rem;
+    align-items: center;
+    justify-content: center
 }
 
 .form-info span {
@@ -67,47 +93,52 @@ body {
 
 .file-container {
     display: flex;
-    width: 40vw;
+    width: 100%;
     outline: 1px solid #2e2e2e;
     outline-offset: -1px;
     border-radius: 25px 0px 0px 25px;
 }
 
-header h2 {
-    margin-top: 1rem;
-    font-weight: lighter;
+header {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.sub-title {
+    font-weight: 400;
     font-size: 1rem;
 }
 
-
-input[type="file"]::file-selector-button {
-    margin-inline-end: 1em;
-    height: 100%;
-    width: 100px;
-    background-color:var(--btn-color);
-    color: var(--btn-text-color);
-    border: none;
-    border-right: 1px solid var(--text-color);
-    font: inherit;
-    cursor: pointer;
+.page-subtitle {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #0a6bff;
 }
 
-.form-container h2 {
-    font-size: 1.25rem;
-    font-weight: lighter;
+.form-options-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+
+.drop-zone {
+    margin-top: 2rem;
+    width: 50%;
+    height: 20rem;
+    outline: 2px solid var(--text-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    outline: 1px black dashed;
+    background-color: #ffffff7c;
+    padding: 2rem;
+    border-radius: 0.25rem;
 }
 
 @media (max-width: 620px) {
-    .main-form {
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 2rem;
-    }
-    input[type="file"]::file-selector-button {
-        height: 3rem;
-        border-radius: 0px;
-    }
     .file-container {
         border-radius: 0px;
         width: 20rem;
@@ -115,5 +146,24 @@ input[type="file"]::file-selector-button {
 
     .btn {
         border-radius: 0px;
+    }
+}
+
+.form-options {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.wave-text span {
+    animation: fadein 0.01s ease forwards;
+    opacity: 0;
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
     }
 }

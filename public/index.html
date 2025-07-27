@@ -5,25 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IMGtoPDF</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/196c55cf8b.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <header>
-        <h1 class="page-title">IMGtoPDF</h1>
-        <h2>Upload image(s) to be converted into a single PDF</h2>
+        <h1 class="page-title wave-text">IMGtoPDF</h1>
+        <div class="icon-title"><i class="fa-regular fa-image"></i><i class="fa-solid fa-arrow-right"></i><i class="fa-regular fa-file-pdf"></i></div>
+        <h2 class="sub-title">Upload image(s) to be converted into a single PDF</h2>
     </header>
-    <div class="form-container">
-        
+    <div class="form-options-container">
+        <h2 class="page-subtitle">Options</h2>
+        <div class="form-options">
+        <p>Page Size:</p>
+        <select name="pageSize" id="page-size" class="page-size-dd"></select>
+        <p>Image:</p>
+        <select name="imageSize" id="image-dd">
+            <option value="stretch">Stretch to Fill</option>
+            <option value="original">Keep Original Size</option>
+            <option value="fit">Fit Page</option>
+            <option value="center">Center</option>
+        </select>
+        </div>
+    </div>
+
+
+    <div class="drop-zone">
+        <div class="form-top">
+        <p>Drag one or more files to upload</p>
         <div class="form-info">
             <p><span>Max. file size: </span>5MB</p>
             <p><span>Max. files: </span>10</p>
         </div>
-    
-        <form action="upload" method="POST" enctype="multipart/form-data" class="main-form">
-            <div class="file-container">
-                <input name="upload-files" type="file" multiple>
-            </div>
-            <button type="submit" class="btn">Submit</button>
-        </form>
+        </div>
+    <div class="form-container">
+        
+        <label for="upload-files" class="btn upload-btn"><i class="fa-regular fa-file"></i>Choose Files</label>
+        <input id="upload-files" name="upload-files" type="file" multiple hidden>
+        </div>
+        <button id="submit" type="submit" class="btn">Generate PDF</button>
     </div>
+    <script src="script.js"></script>
 </body>
 </html>
